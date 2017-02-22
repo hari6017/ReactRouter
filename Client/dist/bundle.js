@@ -12014,12 +12014,59 @@ var Register = function (_React$Component) {
   }
 
   _createClass(Register, [{
-    key: 'render',
+    key: "formSubmit",
+    value: function formSubmit() {
+      var obj1 = { fname: document.Register.fname.value,
+        lname: document.Register.lname.value,
+        date: document.Register.date.value,
+        Gender: document.Register.group1.value,
+        Status: document.Register.status.value
+      };
+      console.log(obj1);
+
+      $.post("/register", obj1);
+    }
+  }, {
+    key: "render",
     value: function render() {
       return _react2.default.createElement(
-        'h1',
+        "div",
         null,
-        'Hi from Register'
+        _react2.default.createElement(
+          "form",
+          { name: "Register" },
+          "FirstName : ",
+          _react2.default.createElement("input", { type: "text", name: "fname", id: "fname" }),
+          _react2.default.createElement("br", null),
+          "LastName :  ",
+          _react2.default.createElement("input", { type: "text", name: "lname", id: "lname" }),
+          _react2.default.createElement("br", null),
+          "DateOfBirth : ",
+          _react2.default.createElement("input", { type: "date", name: "date", id: "date" }),
+          _react2.default.createElement("br", null),
+          _react2.default.createElement("input", { type: "radio", name: "group1", value: "M" }),
+          " Male",
+          _react2.default.createElement("br", null),
+          _react2.default.createElement("input", { type: "radio", name: "group1", value: "F" }),
+          " Female",
+          _react2.default.createElement("br", null),
+          "Status : ",
+          _react2.default.createElement(
+            "select",
+            { name: "status" },
+            _react2.default.createElement(
+              "option",
+              { value: "Employee" },
+              "Employee"
+            ),
+            _react2.default.createElement(
+              "option",
+              { value: "UnEmployee" },
+              "Un Employee"
+            )
+          ),
+          _react2.default.createElement("input", { type: "button", onClick: this.formSubmit })
+        )
       );
     }
   }]);
