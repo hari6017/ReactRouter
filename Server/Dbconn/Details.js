@@ -8,7 +8,7 @@ var Details = mongoose.Schema (
     lname : String,
     date : Date,
     gender : String,
-    Occupation : String
+    Occupation : String,
 
   }
 );

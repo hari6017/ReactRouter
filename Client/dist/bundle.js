@@ -11964,12 +11964,36 @@ var Login = function (_React$Component) {
   }
 
   _createClass(Login, [{
+    key: 'handlelogin',
+    value: function handlelogin() {
+      var uname = document.Register.uname.value;
+      var pass = document.Register.pass.value;
+      console.log(uname);
+      console.log(pass);
+      $.ajax({
+        url: '/login',
+        method: 'post',
+        data: { 'uname': uname, 'pass': pass }
+
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        'h1',
-        null,
-        'Hi from Login'
+        'form',
+        { name: 'Register' },
+        'FirstName : ',
+        _react2.default.createElement('input', { type: 'text', name: 'uname', id: 'uname' }),
+        _react2.default.createElement('br', null),
+        'LastName :  ',
+        _react2.default.createElement('input', { type: 'password', name: 'pass', id: 'pass' }),
+        _react2.default.createElement('br', null),
+        _react2.default.createElement(
+          'button',
+          { type: 'button', onClick: this.handlelogin },
+          'Login'
+        )
       );
     }
   }]);
@@ -12036,10 +12060,10 @@ var Register = function (_React$Component) {
           "form",
           { name: "Register" },
           "FirstName : ",
-          _react2.default.createElement("input", { type: "text", name: "fname", id: "fname" }),
+          _react2.default.createElement("input", { type: "text", name: "name", id: "fname" }),
           _react2.default.createElement("br", null),
           "LastName :  ",
-          _react2.default.createElement("input", { type: "text", name: "lname", id: "lname" }),
+          _react2.default.createElement("input", { type: "password", name: "pass", id: "lname" }),
           _react2.default.createElement("br", null),
           "DateOfBirth : ",
           _react2.default.createElement("input", { type: "date", name: "date", id: "date" }),

@@ -20,8 +20,8 @@ formSubmit() {
     return(
       <div>
         <form name = "Register">
-          FirstName : <input type = "text" name = "fname" id = "fname"/><br/>
-          LastName :  <input type = "text" name = "lname" id = "lname"/><br/>
+          FirstName : <input type = "text" name = "name" id = "fname"/><br/>
+          LastName :  <input type = "password" name = "pass" id = "lname"/><br/>
           DateOfBirth : <input type = "date" name = "date" id = "date"/><br/>
           <input type="radio" name="group1" value="M" /> Male<br />
           <input type="radio" name="group1" value="F"  /> Female<br />
